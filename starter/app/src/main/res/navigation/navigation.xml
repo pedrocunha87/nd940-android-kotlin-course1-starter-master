@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.udacity.shoestore.views.login.LoginFragment"
+        android:label="@string/login_title"
+        tools:layout="@layout/login_fragment">
+
+        <action
+            android:id="@+id/action_login_to_welcome"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.udacity.shoestore.views.welcome.WelcomeFragment"
+        android:label="@string/welcome_title"
+        tools:layout="@layout/welcome_fragment">
+
+        <action
+            android:id="@+id/welcome_to_instructions"
+            app:destination="@id/instructionsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/instructionsFragment"
+        android:name="com.udacity.shoestore.views.instructions.InstructionsFragment"
+        android:label="@string/instructions_title"
+        tools:layout="@layout/instruction_fragment">
+
+        <action
+            android:id="@+id/action_instructions_to_list"
+            app:destination="@id/listFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.udacity.shoestore.views.list.ListFragment"
+        android:label="@string/list_title"
+        tools:layout="@layout/list_fragment">
+
+        <action
+            android:id="@+id/actions_list_to_detail"
+            app:destination="@id/detailFragment"
+            app:popUpTo="@layout/detail_fragment"/>
+
+        <action
+            android:id="@+id/actions_list_to_login"
+            app:destination="@id/loginFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.udacity.shoestore.views.detail.DetailFragment"
+        android:label="@string/detail_title"
+        tools:layout="@layout/detail_fragment" />
+
+</navigation>
