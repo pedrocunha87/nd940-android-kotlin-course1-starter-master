@@ -47,11 +47,11 @@ class ListFragment : Fragment() {
 
                 list.forEach { shoe ->
                     val inflater = LayoutInflater.from(binding.listShoes.context)
-                    val binding: ShoeDetailFragmentBinding =
+                    val shoeBinding: ShoeDetailFragmentBinding =
                         ShoeDetailFragmentBinding
                             .inflate(inflater, binding.listShoes, true)
 
-                    binding.shoe = shoe
+                    shoeBinding.shoe = shoe
                 }
             })
     }
