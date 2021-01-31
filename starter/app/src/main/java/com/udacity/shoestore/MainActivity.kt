@@ -9,6 +9,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.udacity.shoestore.databinding.ActivityMainBinding
 import timber.log.Timber
 
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,17 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         val navController = navHostFragment.navController
 
-
         navController.let {
-            val appBarConfiguration = AppBarConfiguration
-                .Builder()
-                .setFallbackOnNavigateUpListener {
-                    onBackPressed()
-                    true
-                }.build()
+            it.setGraph(R.navigation.navigation)
 
-            navController
-                .setGraph(R.navigation.navigation)
+            val appBarConfiguration = AppBarConfiguration(setOf(R.id.loginFragment, R.id.listFragment))
 
             setSupportActionBar(binding.toolbar)
 

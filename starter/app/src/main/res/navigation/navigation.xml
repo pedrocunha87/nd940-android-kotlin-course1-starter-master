@@ -9,6 +9,7 @@
         android:id="@+id/loginFragment"
         android:name="com.udacity.shoestore.views.login.LoginFragment"
         android:label="@string/login_title"
+        app:popUpToInclusive="true"
         tools:layout="@layout/login_fragment">
 
         <action
@@ -24,7 +25,8 @@
 
         <action
             android:id="@+id/welcome_to_instructions"
-            app:destination="@id/instructionsFragment" />
+            app:destination="@id/instructionsFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -35,7 +37,10 @@
 
         <action
             android:id="@+id/action_instructions_to_list"
-            app:destination="@id/listFragment"/>
+            app:destination="@id/listFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="false"
+            app:launchSingleTop="true"/>
     </fragment>
 
     <fragment
@@ -47,12 +52,8 @@
         <action
             android:id="@+id/actions_list_to_detail"
             app:destination="@id/detailFragment"
-            app:popUpTo="@layout/detail_fragment"/>
-
-        <action
-            android:id="@+id/actions_list_to_login"
-            app:destination="@id/loginFragment" />
-
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment

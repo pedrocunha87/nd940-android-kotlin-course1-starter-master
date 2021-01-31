@@ -66,7 +66,7 @@ class ListFragment : Fragment() {
         return when (item.itemId) {
             R.id.logout -> {
                 findNavController()
-                    .navigate(ListFragmentDirections.actionsListToLogin())
+                    .navigateUp()
                 true
             }
             else -> super.onOptionsItemSelected(item)

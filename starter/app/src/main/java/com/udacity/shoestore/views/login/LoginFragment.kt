@@ -36,6 +36,7 @@ class LoginFragment : Fragment() {
                 findNavController()
                     .navigate(LoginFragmentDirections.actionLoginToWelcome())
             }
+
         return binding.root
     }
 }
